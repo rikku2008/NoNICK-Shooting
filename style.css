@@ -1,0 +1,380 @@
+body{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    margin: 0px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+footer{
+    font-size: 6px;
+}
+
+/* headerプログラム */
+
+    header h1{
+        margin-top: 0px;
+        font-size: 24px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        padding-top: 5px;
+        padding-left: 10px;
+        color: black;
+    }
+
+    header{
+        display: flex;
+        user-select: none;
+        position: fixed;
+        width: 100%;
+        height: 64px;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sp-menu{
+        margin-top: 8px;
+        margin-right: 10px;
+    }
+
+    .menu{
+        display: flex;
+        list-style: none;
+        color: black;
+        padding-left: 20px;
+    }
+
+    .menu li{
+        padding-right: 10px;
+    }
+
+    .overlay{
+        /* position: fixed; */
+        position: absolute;
+        width: 100vw;
+        height: 100vw;
+        top: 0;
+        right: 0;
+        left: 0px;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.948);
+        text-align:center;
+        /* padding-top: 256px; */
+        opacity: 0;
+        pointer-events: none;
+        transition: .6s;
+        z-index: 2147483647;
+    }
+
+    .overlay.show{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .overlay.show li{
+        opacity: 1;
+        transform: none;
+    }
+
+    .overlay ul{
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 100px;
+    }
+    .overlay li{
+        margin: 12px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity .3s, transform .3s;
+    }
+
+    .overlay #closemenu{
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .sp-menu #openmenu.hide{
+        display: none;
+    }
+
+    .overlay.show li:nth-child(1){
+        transition-delay: 0.1s;
+    }
+    .overlay.show li:nth-child(2){
+        transition-delay: 0.1s;
+    }
+
+    /* .pcmenu{
+        margin-top: 10px;
+    } */
+
+    .pcmenu ul a li {
+        list-style-type: none;
+        color: black;
+    }
+
+    .pcmenu ul a{
+        color: black;
+        margin-left: 10px;
+    }
+    .pcmenu ul {
+        display: flex;
+    }
+
+
+    @media (min-width: 501px) {
+        .sp-menu{
+            display: none;
+        }
+        .material-icons{
+            display: none;
+        }
+        .hide{
+            opacity: 0;
+        }
+        header{
+            justify-content: start;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .pcmenu{
+            display: none;
+        }
+    }
+
+
+    /* main */
+    main{
+        text-align: center;
+        margin-top: 64px;
+    }
+
+    .button{
+        background: rgb(152,15,177);
+        background: linear-gradient(90deg, rgba(152,15,177,1) 0%, rgba(132,13,200,1) 60%, rgba(171,13,200,1) 100%);
+        color: white;
+        border-radius: 30px;
+        width: 200px;
+        height: 40px;
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+
+    /* gamelist */
+    .gamelink{
+        padding: 10px 20px;
+        border: solid 1px black;
+        width: 70%;
+        height: auto;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        box-shadow: 0px 0px 4px 1px black;
+        background-color: white;
+        margin: 0 auto;
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+        /* justify-content: space-around; */
+        margin-bottom: 30px;
+        color: black;
+    }
+
+    .gamelink a{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        color: black;
+    }
+
+    .gamelink:hover{
+        background-color: #ffffa3;
+        transition: all 0.5s ease;
+    }
+
+
+
+    .links{
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+
+
+    /* Game解説欄 */
+    .news{
+        width: 90%;
+        margin-top: -5px;
+        line-height: 20px;
+        margin: 0 auto;
+    }
+    
+    .newslist {
+        list-style: none;
+        display: flex;
+        padding: 0px;
+        height: 20px;
+        line-height: 20px;
+    }
+    
+    ul.newslist{
+        font-size: 16px;
+        margin-bottom: 0px;
+    
+    }
+    
+    .newslist li a{
+        padding-right: 20px;
+        width: 100px;
+        text-align: center;
+        padding-top: 8px;
+        color: #333;
+        text-decoration: none;
+        border-radius: 4px 4px 0 0;
+        padding-left: 5px;
+    }
+    
+    .newslist li a.active{
+        background-color: #333;
+        color: #fff;
+    }
+    .content.active{
+        background-color: #fff;
+        color: #333;
+        border: 3px solid #333;
+        border-radius: 5px;
+        height: auto;
+        padding: 12px;
+        /* margin: -10px; */
+        display: block;
+    }
+    
+    .newslist li a:not(.active):hover{
+        opacity: 0.5;
+        transition: opacity 0.4s;
+    }
+    
+    .content{
+        display: none;
+    }
+    
+    .newsdata{
+        overflow-y: scroll;
+        height: 200px;
+    }
+
+    .motoneta ul{
+        list-style-type: none;
+        padding: 0px;
+    }
+
+    .play{
+        border-top: solid 3px rgb(0, 0, 0);
+        padding-top: 20px;
+    }
+
+    /* sharebutton */
+    ul.share-buttons{
+        list-style: none;
+        padding: 0;
+    }
+    ul.share-buttons li{
+        display: inline;
+    }
+    ul.share-buttons .sr-only{
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+
+
+    
+footer{
+    background-color: #2f2f2f;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+footer h1{
+    padding-top: 10px;
+    width: 200px;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    border-bottom: solid 3px white;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.games{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.gamearea > h1{
+    width: 100px;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    padding-top: 10px;
+    border-bottom: solid 3px rgb(46, 46, 46);
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(46, 46, 46);
+}
+.gamearea {
+    text-align: center;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+
+.gamearea h1{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.home_gamebutton{
+    width: 80%;
+    height: 80px;
+    border-radius: 40px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    background-color: white;
+    border: solid black 3px
+}
+
+.home_gamebutton:hover{
+    background-color: rgb(124, 124, 124);
+    color: rgb(255, 255, 255);
+    border:none;
+    transition: all 0.5s ease;
+}
+
+.title{
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 10px;
+    width: 200px;
+    font-size: 24px;
+    margin: 0 auto;
+    border-bottom: solid 3px rgb(0, 0, 0);
+}

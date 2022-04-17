@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>NONICKSHOOTING</title>
+        <meta name="description" content="NONICKのシューティングゲームで楽しもう！">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap"  rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            .back{
+                width: 80px;
+                color: black;
+                text-align: center;
+                height: 30px;
+                background-color: white;
+                border-right: solid black 2px;
+            }
+            header{
+                width: 100%;
+                height: 30px;
+                background-color: white;
+                color: black;
+                display: flex;
+                justify-content: flex-start;
+            }
+            #stage,#hp,#score{
+                padding-left: 10px;
+                font-family: 'Bebas Neue', cursive;
+                font-size: 20px;
+            }
+
+            #life-frame {
+                margin-top: 27px;
+                width: 100vh;
+                background-color: rgba(10, 0, 50, 0.6);
+                display: flex;
+            }
+
+            #life-bar {
+                height: 3px;
+                background-color: rgb(0, 255, 255);
+                transition: 300ms;
+                z-index: 10;
+            }
+
+            #life-mark {
+                width: 3px;
+                height: 3px;
+                border-radius: 3px;
+                background-color: rgb(255, 255, 255);
+                filter: saturate(500%);
+                box-shadow: 0 0 5px 3px rgb(200, 255, 255),
+                            0 0 7px 7px rgb(100, 255, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="../shooting.html">
+                <div class="back">
+                    <span>
+                        戻る
+                    </span>
+                </div>
+            </a>
+            <div>
+                <span id="stage">STAGE: ---</span>
+            </div>
+            <div>
+                <span id="hp">HP: ---</span>
+            </div>
+            <div>
+                <span id="score">SCORE:-------</span>
+            </div>
+        </header>
+        <div id="life-frame">
+            <div id="life-bar"></div>
+            <div id="life-mark"></div>
+        </div>
+        <script src="js/enchant.js"></script>
+        <script src="js/ui.enchant.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
